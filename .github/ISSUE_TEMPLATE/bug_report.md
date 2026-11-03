@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: 简短描述问题
-title: "[BUG]"
+title: ''
 labels: ''
 assignees: ''
 
