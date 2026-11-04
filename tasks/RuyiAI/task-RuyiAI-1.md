@@ -1,0 +1,122 @@
+﻿# RuyiAI 测试任务（第 1 轮）
+
+## 1. 文档信息
+
+| 项目 | 内容 |
+|---|---|
+| 任务名称 | RuyiAI 测试任务（第 1 轮） |
+| 所属版本 | RuyiAI |
+| 版本发布时间 | 【YYYY-MM-DD】 |
+| 轮次 | 第 1 轮 |
+| milestone | RuyiAI-1 |
+| 测试起止时间 | 【YYYY-MM-DD ~ YYYY-MM-DD】 |
+| 负责人 | 【】 |
+| 创建时间 | 【YYYY-MM-DD】 |
+
+## 2. 测试环境
+
+| 项目 | 值 |
+|---|---|
+| 发布件类型 | 【qcow2 / iso / oci】 |
+| 镜像下载链接 | 【】 |
+| OS 版本 | 【openRuyi 版本/构建号】 |
+| 内核版本 | 【`uname -r`】 |
+| 架构 | riscv64 |
+| 测试环境类型 | KVM / 物理机 |
+
+## 3. 测试内容
+
+- 每个测试任务以表格列出本轮要执行的全部测试用例。
+- 前三列（测试类型、测试用例、优先级）在新建测试任务时直接生成，其余列在测试执行中/结束后填写。
+
+| 测试类型 | 测试用例 | 优先级 | 相关 bug | 执行结果 | 测试执行人 | 备注 |
+|---|---|---|---|---|---|---|
+| 冒烟测试 | [启动->登录->基础命令可用](../../testcases/smoke/TC-SMOKE-001.md) | P0 |  |  |  |  |
+| 功能测试 | [内核更新后原内核保留、系统持续可用](../../testcases/functional/kernel/TC-TR-0001-01.md) | P2 | https://github.com/woqidaideshi/openRuyi-test/issues/1 | 失败 |  |  |
+| 功能测试 | [使用旧内核重启后功能正常](../../testcases/functional/kernel/TC-TR-0001-02.md) | P2 |  |  |  |  |
+| 功能测试 | [触发内核保留上限清理时最旧运行内核保留](../../testcases/functional/kernel/TC-TR-0001-03.md) | P2 |  |  |  |  |
+| 功能测试 | [内核更新后新内核安装完整、引导项生成](../../testcases/functional/kernel/TC-TR-0002-01.md) | P1 |  |  |  |  |
+| 功能测试 | [使用新内核重启后功能正常](../../testcases/functional/kernel/TC-TR-0002-02.md) | P1 |  |  |  |  |
+| 功能测试 | [systemd 服务启停/禁用](../../testcases/functional/system/TC-TR-0003-01.md) | P1 |  |  |  |  |
+| 功能测试 | [基本关机与重启](../../testcases/functional/system/TC-TR-0004-01.md) | P1 |  |  |  |  |
+| 功能测试 | [时间同步正常](../../testcases/functional/system/TC-TR-0005-01.md) | P1 |  |  |  |  |
+| 功能测试 | [系统日志正常收集](../../testcases/functional/system/TC-TR-0006-01.md) | P1 |  |  |  |  |
+| 功能测试 | [root 修改 hostname](../../testcases/functional/system/TC-TR-0007-01.md) | P1 |  |  |  |  |
+| 功能测试 | [修改当前用户密码](../../testcases/functional/system/TC-TR-0008-01.md) | P1 |  |  |  |  |
+| 功能测试 | [ext4/xfs 创建挂载修复](../../testcases/functional/storage-fs/TC-TR-0009-01.md) | P1 |  |  |  |  |
+| 功能测试 | [LVM 卷管理](../../testcases/functional/storage-fs/TC-TR-0009-02.md) | P1 |  |  |  |  |
+| 功能测试 | [软 RAID 创建组装恢复](../../testcases/functional/storage-fs/TC-TR-0009-03.md) | P1 |  |  |  |  |
+| 功能测试 | [NFS/CIFS 客户端](../../testcases/functional/storage-fs/TC-TR-0009-04.md) | P1 |  |  |  |  |
+| 功能测试 | [升级/迁移数据一致性](../../testcases/functional/storage-fs/TC-TR-0009-05.md) | P1 |  |  |  |  |
+| 功能测试 | [网络配置/DNS/路由与重启保持](../../testcases/functional/network/TC-TR-0010-01.md) | P1 |  |  |  |  |
+| 功能测试 | [连通性与故障恢复](../../testcases/functional/network/TC-TR-0010-02.md) | P1 |  |  |  |  |
+| 功能测试 | [防火墙规则生效](../../testcases/functional/network/TC-TR-0010-03.md) | P1 |  |  |  |  |
+| 功能测试 | [wifi 连接成功且重登免密](../../testcases/functional/network/TC-TR-0011-01.md) | P2 |  |  |  |  |
+| 功能测试 | [wifi 错误密码拒绝](../../testcases/functional/network/TC-TR-0011-02.md) | P2 |  |  |  |  |
+| 功能测试 | [ssh 有效凭据建立会话](../../testcases/functional/network/TC-TR-0012-01.md) | P2 |  |  |  |  |
+| 功能测试 | [TLS/证书认证](../../testcases/functional/security-auth/TC-TR-0013-01.md) | P0 |  |  |  |  |
+| 功能测试 | [SSH 认证与凭据策略](../../testcases/functional/security-auth/TC-TR-0013-02.md) | P0 |  |  |  |  |
+| 功能测试 | [PAM 认证授权](../../testcases/functional/security-auth/TC-TR-0013-03.md) | P0 |  |  |  |  |
+| 功能测试 | [审计记录](../../testcases/functional/security-auth/TC-TR-0013-04.md) | P0 |  |  |  |  |
+| 功能测试 | [磁盘加密](../../testcases/functional/security-auth/TC-TR-0013-05.md) | P0 |  |  |  |  |
+| 功能测试 | [rpm/dnf 命令可执行](../../testcases/functional/package-mgmt/TC-TR-0014-01.md) | P0 |  |  |  |  |
+| 功能测试 | [安装与依赖解析](../../testcases/functional/package-mgmt/TC-TR-0014-02.md) | P0 |  |  |  |  |
+| 功能测试 | [卸载与依赖保护](../../testcases/functional/package-mgmt/TC-TR-0014-03.md) | P0 |  |  |  |  |
+| 功能测试 | [升级与回退](../../testcases/functional/package-mgmt/TC-TR-0014-04.md) | P0 |  |  |  |  |
+| 功能测试 | [仓库元数据正确性](../../testcases/functional/package-mgmt/TC-TR-0014-05.md) | P0 |  |  |  |  |
+| 功能测试 | [异常包操作与错误码](../../testcases/functional/package-mgmt/TC-TR-0014-06.md) | P0 |  |  |  |  |
+| 功能测试 | [tar 归档/列表/解包](../../testcases/functional/pkgs/TC-TR-0015-01.md) | P1 |  |  |  |  |
+| 功能测试 | [gzip/xz/zstd 压缩解压](../../testcases/functional/pkgs/TC-TR-0015-02.md) | P1 |  |  |  |  |
+| 功能测试 | [coreutils/util-linux 文件操作](../../testcases/functional/pkgs/TC-TR-0015-03.md) | P1 |  |  |  |  |
+| 功能测试 | [异常场景容错](../../testcases/functional/pkgs/TC-TR-0015-04.md) | P1 |  |  |  |  |
+| 功能测试 | [calamares 安装器启动](../../testcases/functional/install/TC-TR-0016-01.md) | P1 |  |  |  |  |
+| 功能测试 | [安装磁盘选择](../../testcases/functional/install/TC-TR-0017-01.md) | P2 |  |  |  |  |
+| 功能测试 | [安装用户登录](../../testcases/functional/install/TC-TR-0018-01.md) | P1 |  |  |  |  |
+| 功能测试 | [安装失败返回错误链接](../../testcases/functional/install/TC-TR-0019-01.md) | P2 |  |  |  |  |
+| 功能测试 | [安装后磁盘自动扩容](../../testcases/functional/install/TC-TR-0020-01.md) | P2 |  |  |  |  |
+| 功能测试 | [cloud-init 有 data iso 启动服务](../../testcases/functional/install/TC-TR-0021-01.md) | P1 |  |  |  |  |
+| 功能测试 | [cloud-init 无 data iso 不启动](../../testcases/functional/install/TC-TR-0021-02.md) | P1 |  |  |  |  |
+| 功能测试 | [虚拟机生命周期](../../testcases/functional/virtualization/TC-TR-0022-01.md) | P1 |  |  |  |  |
+| 功能测试 | [客户机设备识别](../../testcases/functional/virtualization/TC-TR-0022-02.md) | P1 |  |  |  |  |
+| 功能测试 | [虚拟磁盘读写与重启一致](../../testcases/functional/virtualization/TC-TR-0022-03.md) | P1 |  |  |  |  |
+| 功能测试 | [虚拟网络与异常诊断](../../testcases/functional/virtualization/TC-TR-0022-04.md) | P1 |  |  |  |  |
+| 功能测试 | [镜像拉取校验解包](../../testcases/functional/container/TC-TR-0023-01.md) | P1 |  |  |  |  |
+| 功能测试 | [容器生命周期](../../testcases/functional/container/TC-TR-0023-02.md) | P1 |  |  |  |  |
+| 功能测试 | [容器网络](../../testcases/functional/container/TC-TR-0023-03.md) | P1 |  |  |  |  |
+| 功能测试 | [异常场景与资源清理](../../testcases/functional/container/TC-TR-0023-04.md) | P1 |  |  |  |  |
+| 功能测试 | [显示器基础显示](../../testcases/functional/desktop/TC-TR-0024-01.md) | P2 |  |  |  |  |
+| 功能测试 | [gcc 编译链接与运行](../../testcases/functional/toolchain/TC-TR-0025-01.md) | P1 |  |  |  |  |
+| 功能测试 | [语法错误诊断](../../testcases/functional/toolchain/TC-TR-0025-02.md) | P1 |  |  |  |  |
+| 功能测试 | [gdb 基础调试](../../testcases/functional/debug/TC-TR-0026-01.md) | P2 |  |  |  |  |
+| 功能测试 | [strace 系统调用记录](../../testcases/functional/debug/TC-TR-0026-02.md) | P2 |  |  |  |  |
+| 功能测试 | [valgrind 内存检测](../../testcases/functional/debug/TC-TR-0026-03.md) | P2 |  |  |  |  |
+
+## 4. 测试结果汇总
+
+| 测试类型 | 用例总数 | 通过 | 失败 | 阻塞 | 通过率 |
+|---|---|---|---|---|---|
+| 冒烟测试 | 【】 | 【】 | 【】 | 【】 | 【】 |
+| 功能测试 | 【】 | 【】 | 【】 | 【】 | 【】 |
+| 合计 | 【】 | 【】 | 【】 | 【】 | 【】 |
+
+## 5. 缺陷记录
+> 缺陷严重程度说明（P0 ~ P3）：
+> - P0 致命——系统崩溃、数据丢失、核心功能不可用或阻断后续测试；
+> - P1 严重——主要功能失效且无绕过方案；
+> - P2 一般——次要功能异常但有绕过方案；
+> - P3 轻微——界面、文案、提示等小问题。
+
+| 缺陷编号 | 缺陷描述 | 严重程度 | 关联 Issue | 状态 |
+|---|---|---|---|---|
+| 【】 | 【】 | 【P0/P1/P2/P3】 | 【】 | 【未解决 / 已修复 / 已验证】 |
+
+## 6. 风险与遗留问题
+
+| 风险 / 遗留问题 | 影响 | 后续计划 |
+|---|---|---|
+| 【】 | 【】 | 【】 |
+
+## 7. 测试结论
+
+- 本轮结论：【通过 / 不通过，能否进入下一轮】
+- 结论依据：【P0 缺陷是否清零、通过率是否达标等】
